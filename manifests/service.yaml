@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gitops-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: gitops-app
+  ports:
+    - protocol: TCP
+      port: 8081         # Puerto expuesto al exterior por el Service
+      targetPort: 80     # Puerto dentro del contenedor
